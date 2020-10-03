@@ -2,25 +2,22 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "image.jpg",
+      "filename" : "Profile.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "image-1.jpg",
+      "filename" : "Profile-1.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "image-2.jpg",
+      "filename" : "Profile-2.jpg",
       "scale" : "3x"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
-  },
-  "properties" : {
-    "compression-type" : "lossy"
   }
 }
