@@ -13,6 +13,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak private var textField: UITextField!
     @IBOutlet weak private var tableView: UITableView!
     let viewModel = HomeViewModel()
+    var id = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,18 +27,30 @@ class HomeViewController: BaseViewController {
     
     private func setupVM(){
         viewModel.onErrorResponse = { error in
+            self.hideLoading()
             self.showAlert(message: error)
         }
         
         viewModel.onSuccessResponse = {
+            self.hideLoading()
             self.tableView.reloadData()
         }
         
+        showLoading()
         viewModel.fetchData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GameDetail" {
+            if let viewController = segue.destination as? GameDetailViewController {
+               viewController.id = id
+            }
+        }
     }
 
     @IBAction func searchClicked(_ sender: UIButton) {
-        
+        showLoading()
+        viewModel.fetchData(search: textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
     }
 }
 
@@ -56,6 +69,7 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        id = String(viewModel.games[indexPath.row].id)
         performSegue(withIdentifier: "GameDetail", sender: nil)
     }
 }

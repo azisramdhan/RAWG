@@ -10,8 +10,17 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    var progress = UIActivityIndicatorView(style: .whiteLarge)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    private func setupUI(){
+        progress.center = self.view.center
+        progress.hidesWhenStopped = true
+        view.addSubview(progress)
     }
     
     
@@ -20,5 +29,14 @@ class BaseViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func showLoading() {
+        progress.startAnimating()
+    }
+    
+    func hideLoading(){
+        progress.stopAnimating()
+    }
+
 
 }

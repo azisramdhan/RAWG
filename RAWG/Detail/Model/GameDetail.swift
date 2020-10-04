@@ -1,25 +1,25 @@
 //
-//  Game.swift
+//  GameDetail.swift
 //  RAWG
 //
-//  Created by Azis on 03/10/20.
+//  Created by Azis on 04/10/20.
 //  Copyright © 2020 Stay At Home ID. All rights reserved.
 //
 
 import Foundation
 
-struct Game: Codable {
-    let id: Int
+struct GameDetail: Codable {
     let name: String
     let released: Date
     let rating: Float
-    var genres: [Genre] = []
-    var ratingsCount: Int
-    var backgroundImage: String
+    let genres: [Genre]
+    let developers: [Developer]
+    let ratingsCount: Int
+    let descriptionRaw: String
+    let backgroundImage: String
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         let dateString = try container.decode(String.self, forKey: .released)
         let dateFormatter = DateFormatter()
@@ -28,17 +28,20 @@ struct Game: Codable {
         released = date
         rating = try container.decode(Float.self, forKey: .rating)
         genres = try container.decode([Genre].self, forKey: .genres)
+        developers = try container.decode([Developer].self, forKey: .developers)
         ratingsCount = try container.decode(Int.self, forKey: .ratingsCount)
+        descriptionRaw = try container.decode(String.self, forKey: .descriptionRaw)
         backgroundImage = try container.decode(String.self, forKey: .backgroundImage)
     }
     
     enum CodingKeys: String, CodingKey {
-        case id
         case name
-        case released
         case rating
+        case released
         case genres
+        case developers
         case ratingsCount = "ratings_count"
+        case descriptionRaw = "description_raw"
         case backgroundImage = "background_image"
     }
 }

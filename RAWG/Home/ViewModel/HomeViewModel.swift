@@ -10,16 +10,17 @@ import Foundation
 
 class HomeViewModel {
     
+    var onSuccessResponse: (()->())?
+    var onErrorResponse: ((String)->())?
+    
     private var page = 1
     private var components = URLComponents(string: "https://api.rawg.io/api/games")!
     var games: [Game] = []
     
-    var onSuccessResponse: (()->())?
-    var onErrorResponse: ((String)->())?
-    
-    func fetchData() {
+    func fetchData(search: String = "") {
         components.queryItems = [
-            URLQueryItem(name: "page", value: String(page))
+            URLQueryItem(name: "page", value: String(page)),
+            URLQueryItem(name: "search", value: String(search))
         ]
         let request = URLRequest(url: components.url!)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

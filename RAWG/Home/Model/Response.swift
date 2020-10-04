@@ -10,8 +10,8 @@ import Foundation
 
 struct Response: Codable {
     let count: Int
-    let next: String
-    let previous: Int?
+    let next: String?
+    let previous: String?
     var results: [Game] = []
 }
  

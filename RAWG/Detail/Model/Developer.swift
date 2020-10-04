@@ -1,14 +1,14 @@
 //
-//  Genre.swift
+//  Developer.swift
 //  RAWG
 //
-//  Created by Azis on 03/10/20.
+//  Created by Azis on 04/10/20.
 //  Copyright © 2020 Stay At Home ID. All rights reserved.
 //
 
 import Foundation
 
-struct Genre: Codable {
+struct Developer: Codable {
     let id: Int
     let name: String
     let slug: String
