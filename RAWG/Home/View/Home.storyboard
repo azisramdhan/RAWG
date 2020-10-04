@@ -67,7 +67,7 @@
                                 <rect key="frame" x="16" y="84" width="382" height="690"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GameCell" id="O6x-l9-wRz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GameCell" id="O6x-l9-wRz" customClass="GameTableViewCell" customModule="RAWG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="382" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O6x-l9-wRz" id="FaO-1S-8tx">
@@ -77,7 +77,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyu-hg-zSP">
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="94"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="awy-y7-dmd">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="awy-y7-dmd">
                                                             <rect key="frame" x="12" y="12" width="94" height="70"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="70" id="bHH-m5-UfJ"/>
@@ -89,32 +89,32 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portal 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7v-Dk-q3D">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7v-Dk-q3D">
                                                             <rect key="frame" x="122" y="12" width="248" height="17"/>
                                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="April 18, 2011" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SJ-QB-scn">
-                                                            <rect key="frame" x="122" y="29" width="61" height="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SJ-QB-scn">
+                                                            <rect key="frame" x="122" y="29" width="24.5" height="12"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.61 | 4K Ratings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxB-a2-Cpc">
-                                                            <rect key="frame" x="122" y="71" width="69" height="11"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxB-a2-Cpc">
+                                                            <rect key="frame" x="122" y="71" width="22.5" height="11"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="9"/>
                                                             <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITX-H5-o3t">
-                                                            <rect key="frame" x="340" y="59" width="30" height="11"/>
+                                                            <rect key="frame" x="340" y="59.5" width="30" height="11"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="9"/>
                                                             <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shooter, Puzzle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rN-xu-RGB">
-                                                            <rect key="frame" x="299" y="70" width="71" height="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rN-xu-RGB">
+                                                            <rect key="frame" x="345.5" y="70.5" width="24.5" height="11.5"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -126,6 +126,7 @@
                                                         <constraint firstItem="y7v-Dk-q3D" firstAttribute="leading" secondItem="awy-y7-dmd" secondAttribute="trailing" constant="16" id="1Ph-wM-yNN"/>
                                                         <constraint firstItem="6rN-xu-RGB" firstAttribute="top" secondItem="ITX-H5-o3t" secondAttribute="bottom" id="WbB-Dc-4bv"/>
                                                         <constraint firstItem="TxB-a2-Cpc" firstAttribute="bottom" secondItem="awy-y7-dmd" secondAttribute="bottom" id="Z7x-wA-vJE"/>
+                                                        <constraint firstItem="6rN-xu-RGB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TxB-a2-Cpc" secondAttribute="trailing" constant="16" id="ZN7-dd-AWE"/>
                                                         <constraint firstAttribute="trailing" secondItem="y7v-Dk-q3D" secondAttribute="trailing" constant="12" id="aD6-Dh-xdq"/>
                                                         <constraint firstItem="y7v-Dk-q3D" firstAttribute="top" secondItem="awy-y7-dmd" secondAttribute="top" id="bGk-M5-yPK"/>
                                                         <constraint firstItem="0SJ-QB-scn" firstAttribute="leading" secondItem="y7v-Dk-q3D" secondAttribute="leading" id="c2O-fw-7VQ"/>
@@ -153,6 +154,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="genresLabel" destination="6rN-xu-RGB" id="eyq-wG-Nx7"/>
+                                            <outlet property="ratingLabel" destination="TxB-a2-Cpc" id="CVO-s9-8aa"/>
+                                            <outlet property="releaseDateLabel" destination="0SJ-QB-scn" id="gaG-Wm-lgw"/>
+                                            <outlet property="thumbnailView" destination="awy-y7-dmd" id="adh-Vb-QkZ"/>
+                                            <outlet property="titleLabel" destination="y7v-Dk-q3D" id="GRD-SX-4Cn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -182,6 +190,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="UXY-ph-NBQ" id="fDG-mX-vzk"/>
                         <outlet property="textField" destination="V52-Jd-1Qe" id="zSB-yW-gSu"/>
                         <segue destination="yjm-aU-m2N" kind="show" identifier="GameDetail" id="6je-Sx-GQG"/>
                     </connections>

@@ -10,7 +10,29 @@ import Foundation
 
 struct Game: Codable {
     let name: String
-    let released: String
+    let released: Date
     let rating: Float
-    let genres: [Genre]
+    var genres: [Genre] = []
+    var ratingsCount: Int
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        let dateString = try container.decode(String.self, forKey: .released)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: dateString)!
+        released = date
+        rating = try container.decode(Float.self, forKey: .rating)
+        genres = try container.decode([Genre].self, forKey: .genres)
+        ratingsCount = try container.decode(Int.self, forKey: .ratingsCount)
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case released
+        case rating
+        case genres
+        case ratingsCount = "ratings_count"
+    }
 }

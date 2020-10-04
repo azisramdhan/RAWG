@@ -12,6 +12,14 @@ struct Genre: Codable {
     let id: Int
     let name: String
     let slug: String
-    let games_count: Int
-    let image_background: String
+    let gamesCount: Int
+    let imageBackground: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case slug
+        case gamesCount = "games_count"
+        case imageBackground = "image_background"
+    }
 }
