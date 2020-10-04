@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tFf-vz-eUh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,6 +25,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="RJx-r3-6K3" id="mGr-tL-Q8v"/>
+                                        </connections>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search" translatesAutoresizingMaskIntoConstraints="NO" id="vS4-81-JQM">
                                         <rect key="frame" x="346" y="8" width="24" height="24"/>
@@ -59,7 +63,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UXY-ph-NBQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UXY-ph-NBQ">
                                 <rect key="frame" x="16" y="84" width="382" height="690"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -179,7 +183,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="textField" destination="V52-Jd-1Qe" id="zSB-yW-gSu"/>
-                        <segue destination="yjm-aU-m2N" kind="show" id="9LB-Dr-FM7"/>
+                        <segue destination="yjm-aU-m2N" kind="show" identifier="GameDetail" id="6je-Sx-GQG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="er1-dw-9n4" sceneMemberID="firstResponder"/>
@@ -189,18 +193,158 @@
         <!--View Controller-->
         <scene sceneID="Ne0-if-r0K">
             <objects>
-                <viewController id="yjm-aU-m2N" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameDetail" id="yjm-aU-m2N" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I58-07-rnP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SED-Rg-ztu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRj-gI-Y1J">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="es4-VA-DVk"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-MF-K8K">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="393"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="3HA-BB-bBE">
+                                                <rect key="frame" x="16" y="24" width="118" height="88"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="WJH-QI-bLg"/>
+                                                    <constraint firstAttribute="width" constant="118" id="fgt-8d-paH"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portal 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gv-iw-abZ">
+                                                <rect key="frame" x="150" y="24" width="248" height="17"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shooter, Puzzle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvs-Uv-YtD">
+                                                <rect key="frame" x="327" y="100" width="71" height="12"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBE-ry-2Fp">
+                                                <rect key="frame" x="368" y="89" width="30" height="11"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="9"/>
+                                                <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKx-b1-ayG">
+                                                <rect key="frame" x="344.5" y="52" width="53.5" height="11"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="9"/>
+                                                <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="April 18, 2011" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6E-Uq-r2D">
+                                                <rect key="frame" x="337" y="63" width="61" height="12"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfv-Jy-PIh">
+                                                <rect key="frame" x="150" y="45" width="46" height="11"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="9"/>
+                                                <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valve Software" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmT-Hf-iLp">
+                                                <rect key="frame" x="150" y="56" width="71" height="12"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.61 | 4K Ratings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awi-Zv-OEy">
+                                                <rect key="frame" x="150" y="101" width="69" height="11"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="9"/>
+                                                <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQB-xe-heu">
+                                                <rect key="frame" x="16" y="147" width="382" height="230"/>
+                                                <string key="text">Portal 2 is a first-person puzzle game developed by Valve Corporation and released on April 19, 2011 on Steam, PS3 and Xbox 360. It was published by Valve Corporation in digital form and by Electronic Arts in physical form. 
+
+Its plot directly follows the first game's, taking place in the Half-Life universe. You play as Chell, a test subject in a research facility formerly ran by the company Aperture Science, but taken over by an evil AI that turned upon its creators, GladOS. After defeating GladOS at the end of the first game but failing to escape the facility, Chell is woken up from a stasis chamber by an AI personality core, Wheatley, as the unkempt complex is falling apart. As the two attempt to navigate through the ruins and escape, they stumble upon GladOS, and accidentally re-activate her...
+
+Portal 2's core mechanics are very similar to the first game's ; the player must make their way through several test chambers which involve puzzles. For this purpose, they possess a Portal Gun, a weapon capable of creating teleportation portals on white surfaces. This seemingly simple mechanic and its subtleties coupled with the many different puzzle elements that can appear in puzzles allows the game to be easy to start playing, yet still feature profound gameplay. The sequel adds several new puzzle elements, such as gel that can render surfaces bouncy or allow you to accelerate when running on them.</string>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaU-a5-l6g">
+                                                <rect key="frame" x="16" y="122" width="77.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="3HA-BB-bBE" firstAttribute="leading" secondItem="aGk-MF-K8K" secondAttribute="leading" constant="16" id="0l3-iA-u7K"/>
+                                            <constraint firstItem="jfv-Jy-PIh" firstAttribute="top" secondItem="5Gv-iw-abZ" secondAttribute="bottom" constant="4" id="0s3-gn-o4o"/>
+                                            <constraint firstItem="c6E-Uq-r2D" firstAttribute="trailing" secondItem="yKx-b1-ayG" secondAttribute="trailing" id="ABP-ns-Vnx"/>
+                                            <constraint firstItem="kaU-a5-l6g" firstAttribute="top" secondItem="3HA-BB-bBE" secondAttribute="bottom" constant="10" id="CRe-gD-s6n"/>
+                                            <constraint firstItem="Awi-Zv-OEy" firstAttribute="bottom" secondItem="3HA-BB-bBE" secondAttribute="bottom" id="IoX-Ll-Ses"/>
+                                            <constraint firstItem="xvs-Uv-YtD" firstAttribute="top" secondItem="pBE-ry-2Fp" secondAttribute="bottom" id="O0g-QA-XYC"/>
+                                            <constraint firstItem="pBE-ry-2Fp" firstAttribute="trailing" secondItem="5Gv-iw-abZ" secondAttribute="trailing" id="OcG-n1-EqK"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Gv-iw-abZ" secondAttribute="trailing" constant="16" id="Orc-QX-fJx"/>
+                                            <constraint firstItem="jfv-Jy-PIh" firstAttribute="leading" secondItem="5Gv-iw-abZ" secondAttribute="leading" id="P9b-yf-s8D"/>
+                                            <constraint firstItem="3HA-BB-bBE" firstAttribute="top" secondItem="aGk-MF-K8K" secondAttribute="top" constant="24" id="QPr-EQ-ch7"/>
+                                            <constraint firstItem="xQB-xe-heu" firstAttribute="top" secondItem="kaU-a5-l6g" secondAttribute="bottom" constant="8" id="Rou-4y-F7c"/>
+                                            <constraint firstItem="xvs-Uv-YtD" firstAttribute="trailing" secondItem="pBE-ry-2Fp" secondAttribute="trailing" id="SA7-3u-kvs"/>
+                                            <constraint firstItem="xQB-xe-heu" firstAttribute="trailing" secondItem="xvs-Uv-YtD" secondAttribute="trailing" id="WKZ-kN-gtS"/>
+                                            <constraint firstItem="mmT-Hf-iLp" firstAttribute="leading" secondItem="jfv-Jy-PIh" secondAttribute="leading" id="ZoL-ZZ-X6g"/>
+                                            <constraint firstItem="xvs-Uv-YtD" firstAttribute="bottom" secondItem="Awi-Zv-OEy" secondAttribute="bottom" id="bYI-Ko-Olw"/>
+                                            <constraint firstItem="c6E-Uq-r2D" firstAttribute="top" secondItem="yKx-b1-ayG" secondAttribute="bottom" id="bbE-Dm-cXs"/>
+                                            <constraint firstItem="mmT-Hf-iLp" firstAttribute="top" secondItem="jfv-Jy-PIh" secondAttribute="bottom" id="d1T-jQ-fDU"/>
+                                            <constraint firstItem="5Gv-iw-abZ" firstAttribute="top" secondItem="3HA-BB-bBE" secondAttribute="top" id="dRD-2b-guc"/>
+                                            <constraint firstItem="xQB-xe-heu" firstAttribute="leading" secondItem="kaU-a5-l6g" secondAttribute="leading" id="eLO-sl-5rv"/>
+                                            <constraint firstItem="pBE-ry-2Fp" firstAttribute="top" secondItem="c6E-Uq-r2D" secondAttribute="bottom" constant="14" id="gnR-yF-5zH"/>
+                                            <constraint firstItem="kaU-a5-l6g" firstAttribute="leading" secondItem="3HA-BB-bBE" secondAttribute="leading" id="gzO-RK-iGT"/>
+                                            <constraint firstAttribute="bottom" secondItem="xQB-xe-heu" secondAttribute="bottom" constant="16" id="hIr-Bq-ASM"/>
+                                            <constraint firstItem="Awi-Zv-OEy" firstAttribute="leading" secondItem="mmT-Hf-iLp" secondAttribute="leading" id="hhZ-oM-a5u"/>
+                                            <constraint firstItem="yKx-b1-ayG" firstAttribute="trailing" secondItem="5Gv-iw-abZ" secondAttribute="trailing" id="noo-7h-yNI"/>
+                                            <constraint firstItem="5Gv-iw-abZ" firstAttribute="leading" secondItem="3HA-BB-bBE" secondAttribute="trailing" constant="16" id="rl9-wo-uR4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KRj-gI-Y1J" firstAttribute="top" secondItem="SED-Rg-ztu" secondAttribute="top" id="3FW-8R-Gd3"/>
+                                    <constraint firstItem="aGk-MF-K8K" firstAttribute="top" secondItem="KRj-gI-Y1J" secondAttribute="bottom" id="7O8-Ls-rIf"/>
+                                    <constraint firstItem="aGk-MF-K8K" firstAttribute="leading" secondItem="SED-Rg-ztu" secondAttribute="leading" id="7ft-C4-s2p"/>
+                                    <constraint firstAttribute="bottom" secondItem="aGk-MF-K8K" secondAttribute="bottom" id="KY3-qK-KKF"/>
+                                    <constraint firstItem="KRj-gI-Y1J" firstAttribute="width" secondItem="SED-Rg-ztu" secondAttribute="width" id="Yf1-gX-uy2"/>
+                                    <constraint firstAttribute="trailing" secondItem="aGk-MF-K8K" secondAttribute="trailing" id="br0-Nn-7Eo"/>
+                                    <constraint firstItem="KRj-gI-Y1J" firstAttribute="leading" secondItem="SED-Rg-ztu" secondAttribute="leading" id="wUB-1D-b9I"/>
+                                    <constraint firstAttribute="trailing" secondItem="KRj-gI-Y1J" secondAttribute="trailing" id="xkq-19-JN9"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="0.082340128720000003" green="0.082361884420000003" blue="0.082337267699999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SED-Rg-ztu" firstAttribute="trailing" secondItem="wtf-bs-Gci" secondAttribute="trailing" id="BQA-V3-Omk"/>
+                            <constraint firstItem="SED-Rg-ztu" firstAttribute="top" secondItem="wtf-bs-Gci" secondAttribute="top" id="Fi2-nf-0Kx"/>
+                            <constraint firstItem="SED-Rg-ztu" firstAttribute="leading" secondItem="wtf-bs-Gci" secondAttribute="leading" id="J19-r2-Yfj"/>
+                            <constraint firstItem="SED-Rg-ztu" firstAttribute="bottom" secondItem="wtf-bs-Gci" secondAttribute="bottom" id="yBY-FF-idq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wtf-bs-Gci"/>
                     </view>
                     <navigationItem key="navigationItem" id="j3a-Uc-CP2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7E-I3-nuU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2837" y="94"/>
+            <point key="canvasLocation" x="2836.2318840579715" y="93.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ldR-80-hnc">
@@ -279,9 +423,9 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCN-Qk-yk8">
                                                 <rect key="frame" x="36" y="126" width="342" height="126.5"/>
-                                                <mutableString key="text">I am a Mobile Application Developer. I have learn and build mobile apps for few years start from Android platform using Java / Kotlin. I can convert mobile app design into responsive UI using XML and Constraint Layout. I am familiar with some library that I have used to when developing android app such as Butter Knife, Retrofit, Volley, Picasso, Glide, Room etc.
+                                                <string key="text">I am a Mobile Application Developer. I have learn and build mobile apps for few years start from Android platform using Java / Kotlin. I can convert mobile app design into responsive UI using XML and Constraint Layout. I am familiar with some library that I have used to when developing android app such as Butter Knife, Retrofit, Volley, Picasso, Glide, Room etc.
 
-Since last year I have working to build iOS app using Swift or help to fix issue on existing iOS app project written using Swift / Objective C. I build iOS app UI using storyboard and will be interested to learn and start using Swift UI if needed. I have used some library when developing iOS app such as DropDown, CarbonKit, KAPinField, NSActivityIndicatorView etc.</mutableString>
+Since last year I have working to build iOS app using Swift or help to fix issue on existing iOS app project written using Swift / Objective C. I build iOS app UI using storyboard and will be interested to learn and start using Swift UI if needed. I have used some library when developing iOS app such as DropDown, CarbonKit, KAPinField, NSActivityIndicatorView etc.</string>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
