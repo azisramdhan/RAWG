@@ -14,6 +14,7 @@ struct GameDetail: Codable {
     let rating: Float
     let genres: [Genre]
     let developers: [Developer]
+    let clip: Clip
     let ratingsCount: Int
     let descriptionRaw: String
     let backgroundImage: String
@@ -29,6 +30,7 @@ struct GameDetail: Codable {
         rating = try container.decode(Float.self, forKey: .rating)
         genres = try container.decode([Genre].self, forKey: .genres)
         developers = try container.decode([Developer].self, forKey: .developers)
+        clip = try container.decode(Clip.self, forKey: .clip)
         ratingsCount = try container.decode(Int.self, forKey: .ratingsCount)
         descriptionRaw = try container.decode(String.self, forKey: .descriptionRaw)
         backgroundImage = try container.decode(String.self, forKey: .backgroundImage)
@@ -40,6 +42,7 @@ struct GameDetail: Codable {
         case released
         case genres
         case developers
+        case clip
         case ratingsCount = "ratings_count"
         case descriptionRaw = "description_raw"
         case backgroundImage = "background_image"

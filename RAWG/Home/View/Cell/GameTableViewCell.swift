@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Cosmos
 
 class GameTableViewCell: UITableViewCell {
     
@@ -16,6 +17,7 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel! // 4.61 | 4K Ratings
     @IBOutlet weak var genresLabel: UILabel!
+    @IBOutlet weak var ratingView: CosmosView!
     
 
     override func awakeFromNib() {
@@ -43,6 +45,8 @@ class GameTableViewCell: UITableViewCell {
             }
         }
         genresLabel.text = genres
+        ratingView.settings.fillMode = .precise
+        ratingView.rating = Double(data.rating)
     }
 
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A47F2C8252A29E20092B9EA /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A47F2C7252A29E20092B9EA /* Clip.swift */; };
 		0A76440C2528B2F5001F17AF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A76440B2528B2F5001F17AF /* Home.storyboard */; };
 		0A824C732529D0B5005E4807 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A824C722529D0B5005E4807 /* GameDetailViewController.swift */; };
 		0AAA89E92529B58200890150 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA89E82529B58200890150 /* BaseViewController.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		098074A361AF19D4F48E7532 /* Pods-RAWGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAWGTests.debug.xcconfig"; path = "Target Support Files/Pods-RAWGTests/Pods-RAWGTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0A47F2C7252A29E20092B9EA /* Clip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
 		0A76440B2528B2F5001F17AF /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		0A824C722529D0B5005E4807 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		0AAA89E82529B58200890150 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				0AAD8C5A2529CD07002E8092 /* Developer.swift */,
+				0A47F2C7252A29E20092B9EA /* Clip.swift */,
 				0AAD8C582529CB65002E8092 /* GameDetail.swift */,
 			);
 			path = Model;
@@ -578,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AFE001A2529BED9006F65D8 /* Helper.swift in Sources */,
+				0A47F2C8252A29E20092B9EA /* Clip.swift in Sources */,
 				0ADB11632529932A009FCAD7 /* Response.swift in Sources */,
 				0AEB7A9E2527C0F90018568E /* HomeViewController.swift in Sources */,
 				0AED72152528AA18003238B5 /* HomeViewModel.swift in Sources */,

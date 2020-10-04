@@ -7,6 +7,7 @@ target 'RAWG' do
 
   # Pods for RAWG
   pod 'SDWebImage', '~> 5.0'
+  pod 'Cosmos', '~> 23.0'
 
   target 'RAWGTests' do
     inherit! :search_paths
