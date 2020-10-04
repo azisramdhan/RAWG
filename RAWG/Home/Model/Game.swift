@@ -14,6 +14,7 @@ struct Game: Codable {
     let rating: Float
     var genres: [Genre] = []
     var ratingsCount: Int
+    var backgroundImage: String
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -26,6 +27,7 @@ struct Game: Codable {
         rating = try container.decode(Float.self, forKey: .rating)
         genres = try container.decode([Genre].self, forKey: .genres)
         ratingsCount = try container.decode(Int.self, forKey: .ratingsCount)
+        backgroundImage = try container.decode(String.self, forKey: .backgroundImage)
     }
     
     enum CodingKeys: String, CodingKey {
@@ -34,5 +36,6 @@ struct Game: Codable {
         case rating
         case genres
         case ratingsCount = "ratings_count"
+        case backgroundImage = "background_image"
     }
 }

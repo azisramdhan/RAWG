@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class GameTableViewCell: UITableViewCell {
     
@@ -29,6 +30,7 @@ class GameTableViewCell: UITableViewCell {
     }
     
     func setupWith(data: Game){
+        thumbnailView.sd_setImage(with: URL(string: data.backgroundImage), completed: nil)
         titleLabel.text = data.name
         releaseDateLabel.text = data.released.toString(format: "MMM d, yyyy")
         ratingLabel.text = "\(data.rating) | \(Helper.formatNumber(data.ratingsCount)) Ratings"
