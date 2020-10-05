@@ -69,6 +69,7 @@ class GameDetailViewController: BaseViewController {
                     developers += ", " + developer.name
                 }
             }
+            developersLabel.text = developers
             ratingView.settings.fillMode = .precise
             ratingView.rating = Double(data.rating)
         }
