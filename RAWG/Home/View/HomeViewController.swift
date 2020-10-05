@@ -13,7 +13,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak private var textField: UITextField!
     @IBOutlet weak private var tableView: UITableView!
     let viewModel = HomeViewModel()
-    var id = ""
+    var id: Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +69,7 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        id = String(viewModel.games[indexPath.row].id)
+        id = viewModel.games[indexPath.row].id!
         performSegue(withIdentifier: "GameDetail", sender: nil)
     }
 }

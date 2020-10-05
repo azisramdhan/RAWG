@@ -9,9 +9,9 @@
 import Foundation
 
 struct Developer: Codable {
-    let id: Int
-    let name: String
-    let slug: String
+    let id: Int?
+    let name: String?
+    let slug: String?
     let gamesCount: Int?
     let imageBackground: String?
     

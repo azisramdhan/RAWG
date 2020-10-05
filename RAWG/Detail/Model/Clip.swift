@@ -9,6 +9,6 @@
 import Foundation
 
 struct Clip: Codable {
-    let clip: String
-    let preview: String
+    let clip: String?
+    let preview: String?
 }

@@ -14,8 +14,8 @@ class GameDetailViewModel {
     var onErrorResponse: ((String)->())?
     
     var game: GameDetail?
-      
-    func fetchData(id: String = "") {
+
+    func fetchData(id: Int) {
         let url = URL(string: "https://api.rawg.io/api/games/\(id)")
         let request = URLRequest(url: url!)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

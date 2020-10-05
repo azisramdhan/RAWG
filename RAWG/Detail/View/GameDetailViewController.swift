@@ -23,7 +23,7 @@ class GameDetailViewController: BaseViewController {
     @IBOutlet weak private var previewClipView: UIImageView!
     
     private let viewModel = GameDetailViewModel()
-    var id = ""
+    var id: Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,17 +46,21 @@ class GameDetailViewController: BaseViewController {
     
     private func updateUI(){
         if let data = viewModel.game {
-            previewClipView.sd_setImage(with: URL(string: data.clip.preview), completed: nil)
-            thumbnailView.sd_setImage(with: URL(string: data.backgroundImage), completed: nil)
+            if let preview = data.clip?.preview {
+                previewClipView.sd_setImage(with: URL(string: preview), completed: nil)
+            }
+            if let thumbnail = data.backgroundImage {
+                thumbnailView.sd_setImage(with: URL(string: thumbnail), completed: nil)
+            }
             titleLabel.text = data.name
-            releaseDateLabel.text = data.released.toString(format: "MMM d, yyyy")
-            ratingLabel.text = "\(data.rating) | \(Helper.formatNumber(data.ratingsCount)) Ratings"
+            releaseDateLabel.text = data.released?.toString(format: "MMM d, yyyy")
+            ratingLabel.text = "\(data.rating ?? 0) | \(Helper.formatNumber(data.ratingsCount ?? 0)) Ratings"
             var genres = ""
             for (index, genre) in data.genres.enumerated() {
                 if index == 0 {
-                    genres += genre.name
+                    genres += genre.name ?? ""
                 } else {
-                    genres += ", " + genre.name
+                    genres += ", " + (genre.name ?? "")
                 }
             }
             genresLabel.text = genres
@@ -64,25 +68,29 @@ class GameDetailViewController: BaseViewController {
             var developers = ""
             for (index, developer) in data.developers.enumerated() {
                 if index == 0 {
-                    developers += developer.name
+                    developers += developer.name ?? ""
                 } else {
-                    developers += ", " + developer.name
+                    developers += ", " + (developer.name ?? "")
                 }
             }
             developersLabel.text = developers
             ratingView.settings.fillMode = .precise
-            ratingView.rating = Double(data.rating)
+            ratingView.rating = Double(data.rating ?? 0)
         }
     }
 
     @IBAction func previewClicked(_ sender: UIButton) {
         if let data = viewModel.game {
-            let player = AVPlayer(url: URL(string: data.clip.clip)!)
-            let vc = AVPlayerViewController()
-            vc.player = player
+            if let clip = data.clip?.clip {
+                let player = AVPlayer(url: URL(string: clip)!)
+                let vc = AVPlayerViewController()
+                vc.player = player
 
-            present(vc, animated: true) {
-                vc.player?.play()
+                present(vc, animated: true) {
+                    vc.player?.play()
+                }
+            } else {
+                showAlert(message: "Sorry, preview is not available")
             }
         }
     }

@@ -9,15 +9,15 @@
 import Foundation
 
 struct GameDetail: Codable {
-    let name: String
-    let released: Date
-    let rating: Float
-    let genres: [Genre]
-    let developers: [Developer]
-    let clip: Clip
-    let ratingsCount: Int
-    let descriptionRaw: String
-    let backgroundImage: String
+    let name: String?
+    let released: Date?
+    let rating: Float?
+    var genres: [Genre] = []
+    var developers: [Developer] = []
+    let clip: Clip?
+    let ratingsCount: Int?
+    let descriptionRaw: String?
+    let backgroundImage: String?
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

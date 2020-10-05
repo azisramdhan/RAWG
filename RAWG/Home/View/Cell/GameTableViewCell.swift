@@ -32,21 +32,23 @@ class GameTableViewCell: UITableViewCell {
     }
     
     func setupWith(data: Game){
-        thumbnailView.sd_setImage(with: URL(string: data.backgroundImage), completed: nil)
+        if let thumbnail = data.backgroundImage {
+            thumbnailView.sd_setImage(with: URL(string: thumbnail), completed: nil)
+        }
         titleLabel.text = data.name
-        releaseDateLabel.text = data.released.toString(format: "MMM d, yyyy")
-        ratingLabel.text = "\(data.rating) | \(Helper.formatNumber(data.ratingsCount)) Ratings"
+        releaseDateLabel.text = data.released?.toString(format: "MMM d, yyyy")
+        ratingLabel.text = "\(data.rating ?? 0) | \(Helper.formatNumber(data.ratingsCount ?? 0)) Ratings"
         var genres = ""
         for (index, genre) in data.genres.enumerated() {
             if index == 0 {
-                genres += genre.name
+                genres += genre.name ?? ""
             } else {
-                genres += ", " + genre.name
+                genres += ", " + (genre.name ?? "")
             }
         }
         genresLabel.text = genres
         ratingView.settings.fillMode = .precise
-        ratingView.rating = Double(data.rating)
+        ratingView.rating = Double(data.rating ?? 0)
     }
 
 }

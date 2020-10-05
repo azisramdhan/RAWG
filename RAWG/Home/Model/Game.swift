@@ -9,13 +9,13 @@
 import Foundation
 
 struct Game: Codable {
-    let id: Int
-    let name: String
-    let released: Date
-    let rating: Float
+    let id: Int?
+    let name: String?
+    let released: Date?
+    let rating: Float?
     var genres: [Genre] = []
-    var ratingsCount: Int
-    var backgroundImage: String
+    var ratingsCount: Int?
+    var backgroundImage: String?
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
