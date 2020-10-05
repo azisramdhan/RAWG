@@ -76,8 +76,6 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        showLoading()
-        viewModel.fetchData(search: textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
-        return textField.resignFirstResponder()
+        textField.resignFirstResponder()
     }
 }
