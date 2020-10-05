@@ -26,14 +26,15 @@ class HomeViewModel {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let response = response as? HTTPURLResponse else { return }
             DispatchQueue.main.async {
-                if let data = data {
-                    if response.statusCode == 200 {
+                if response.statusCode == 200 {
+                    if let data = data {
                         let decoder = JSONDecoder()
-                        if let response = try? decoder.decode(Response.self, from: data) {
+                        do {
+                            let response = try decoder.decode(Response.self, from: data)
                             self.games = response.results
                             self.onSuccessResponse?()
-                        } else {
-                            self.onErrorResponse?("Not a Valid JSON Response")
+                        } catch let error {
+                            self.onErrorResponse?("Not a Valid JSON Response with Error : \(error)")
                         }
                     } else {
                         self.onErrorResponse?("HTTP Status: \(response.statusCode)")

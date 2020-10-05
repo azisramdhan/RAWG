@@ -19,17 +19,17 @@ struct Game: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(Int.self, forKey: .id)
-        name = try container.decode(String.self, forKey: .name)
-        let dateString = try container.decode(String.self, forKey: .released)
+        id = try container.decode(Int?.self, forKey: .id)
+        name = try container.decode(String?.self, forKey: .name)
+        let dateString = try container.decode(String?.self, forKey: .released) ?? ""
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatter.date(from: dateString)!
+        let date = dateFormatter.date(from: dateString)
         released = date
-        rating = try container.decode(Float.self, forKey: .rating)
-        genres = try container.decode([Genre].self, forKey: .genres)
-        ratingsCount = try container.decode(Int.self, forKey: .ratingsCount)
-        backgroundImage = try container.decode(String.self, forKey: .backgroundImage)
+        rating = try container.decode(Float?.self, forKey: .rating)
+        genres = try (container.decode([Genre]?.self, forKey: .genres) ?? [])
+        ratingsCount = try container.decode(Int?.self, forKey: .ratingsCount)
+        backgroundImage = try container.decode(String?.self, forKey: .backgroundImage)
     }
     
     enum CodingKeys: String, CodingKey {
