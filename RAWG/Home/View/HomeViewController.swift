@@ -22,6 +22,7 @@ class HomeViewController: BaseViewController {
     }
 
     private func setupUI(){
+        navigationController?.navigationBar.barStyle = UIBarStyle.black
         textField.attributedPlaceholder = NSAttributedString(string: "Search game", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.5411764706, green: 0.5411764706, blue: 0.5411764706, alpha: 1)])
     }
     
@@ -46,6 +47,11 @@ class HomeViewController: BaseViewController {
                viewController.id = id
             }
         }
+    }
+    
+    @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
     }
 
     @IBAction func searchClicked(_ sender: UIButton) {

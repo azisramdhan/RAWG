@@ -27,7 +27,19 @@ class GameDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         setupVM()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    
+    private func setupUI(){
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     private func setupVM(){
