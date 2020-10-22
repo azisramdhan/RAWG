@@ -20,6 +20,7 @@
 		0AAD8C5B2529CD07002E8092 /* Developer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAD8C5A2529CD07002E8092 /* Developer.swift */; };
 		0AC041D02528ED2500D8BE0C /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC041CF2528ED2500D8BE0C /* TextField.swift */; };
 		0ADB11632529932A009FCAD7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADB11622529932A009FCAD7 /* Response.swift */; };
+		0ADF6CDF254105E800CA7993 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF6CDE254105E800CA7993 /* ImagePicker.swift */; };
 		0AEB7A9A2527C0F90018568E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB7A992527C0F90018568E /* AppDelegate.swift */; };
 		0AEB7A9C2527C0F90018568E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB7A9B2527C0F90018568E /* SceneDelegate.swift */; };
 		0AEB7A9E2527C0F90018568E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB7A9D2527C0F90018568E /* HomeViewController.swift */; };
@@ -72,6 +73,7 @@
 		0AAD8C5A2529CD07002E8092 /* Developer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Developer.swift; sourceTree = "<group>"; };
 		0AC041CF2528ED2500D8BE0C /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		0ADB11622529932A009FCAD7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		0ADF6CDE254105E800CA7993 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0AEB7A962527C0F90018568E /* RAWG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAWG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEB7A992527C0F90018568E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AEB7A9B2527C0F90018568E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				0AFE00192529BED9006F65D8 /* Helper.swift */,
+				0ADF6CDE254105E800CA7993 /* ImagePicker.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				0A824C732529D0B5005E4807 /* GameDetailViewController.swift in Sources */,
 				0AFE001D2529BF0D006F65D8 /* Double.swift in Sources */,
 				0AFE001F2529BFAD006F65D8 /* Date.swift in Sources */,
+				0ADF6CDF254105E800CA7993 /* ImagePicker.swift in Sources */,
 				0AAD8C572529CAD8002E8092 /* GameDetailViewModel.swift in Sources */,
 				0AED72132528A905003238B5 /* Genre.swift in Sources */,
 			);

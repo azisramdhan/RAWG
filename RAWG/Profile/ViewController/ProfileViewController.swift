@@ -14,10 +14,14 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak private var addressLabel: UILabel!
     @IBOutlet weak private var roleLabel: UILabel!
     @IBOutlet weak private var aboutLabel: UILabel!
+    @IBOutlet weak private var imageView: UIImageView!
     private let profileVM = ProfileViewModel()
+    var imagePicker: ImagePicker!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        showAlert(title: "Image Profile", message: "Click on the image to change")
+        setupPicker()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,7 +30,14 @@ class ProfileViewController: BaseViewController {
         setupUI()
     }
     
+    private func setupPicker(){
+        imagePicker = ImagePicker(presentationController: self, delegate: self)
+    }
+    
     private func setupUI(){
+        if let imageData = profileVM.profile.image {
+            imageView.image = UIImage(data: imageData)
+        }
         nameLabel.text = profileVM.profile.name
         addressLabel.text = profileVM.profile.address
         roleLabel.text = profileVM.profile.role
@@ -38,4 +49,18 @@ class ProfileViewController: BaseViewController {
         vc.profile = profileVM.profile
     }
 
+    @IBAction func imageClicked(_ sender: UIButton) {
+        imagePicker.present(from: sender)
+    }
+}
+
+extension ProfileViewController: ImagePickerDelegate {
+
+    func didSelect(image: UIImage?) {
+        if let image = image {
+            imageView.image = image
+            profileVM.profile.image = image.pngData()
+            profileVM.saveProfile()
+        }
+    }
 }

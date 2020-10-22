@@ -9,6 +9,7 @@
 import Foundation
 
 struct Profile: Codable {
+    var image: Data?
     var name: String = "Your Name"
     var address: String = "Your Address"
     var role: String = "Your Job Title / Position"
