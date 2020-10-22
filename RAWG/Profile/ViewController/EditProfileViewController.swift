@@ -16,30 +16,30 @@ class EditProfileViewController: BaseViewController {
     @IBOutlet weak private var aboutTextField: UITextView!
     
     private let profileVM = ProfileViewModel()
-    var profile: Profile!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        profileVM.loadProfile()
         setupUI()
-        showInfo()
     }
     
     private func setupUI(){
-        nameTextField.text = profile.name
-        addressTextField.text = profile.address
-        roleTextField.text = profile.role
-        aboutTextField.text = profile.about
+        nameTextField.text = profileVM.profile.name
+        addressTextField.text = profileVM.profile.address
+        roleTextField.text = profileVM.profile.role
+        aboutTextField.text = profileVM.profile.about
     }
     
-    private func showInfo(){
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         showAlert(title: "Edit Info", message: "Click on the text to edit")
     }
     
     private func setProfile(){
-        profile.name = nameTextField.text ?? ""
-        profile.address = addressTextField.text ?? ""
-        profile.role = roleTextField.text ?? ""
-        profile.about = aboutTextField.text ?? ""
+        profileVM.profile.name = nameTextField.text ?? ""
+        profileVM.profile.address = addressTextField.text ?? ""
+        profileVM.profile.role = roleTextField.text ?? ""
+        profileVM.profile.about = aboutTextField.text ?? ""
     }
 
     @IBAction func roleTitleClicked(_ sender: UIButton) {
@@ -48,7 +48,6 @@ class EditProfileViewController: BaseViewController {
     
     @IBAction func doneClicked(_ sender: UIBarButtonItem) {
         setProfile()
-        profileVM.profile = profile
         profileVM.saveProfile()
         navigationController?.popViewController(animated: true)
     }

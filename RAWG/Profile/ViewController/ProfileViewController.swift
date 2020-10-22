@@ -20,7 +20,6 @@ class ProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        showAlert(title: "Image Profile", message: "Click on the image to change")
         setupPicker()
     }
     
@@ -28,6 +27,11 @@ class ProfileViewController: BaseViewController {
         super.viewWillAppear(animated)
         profileVM.loadProfile()
         setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showAlert(title: "Image Profile", message: "Click on the image to change")
     }
     
     private func setupPicker(){
@@ -42,11 +46,6 @@ class ProfileViewController: BaseViewController {
         addressLabel.text = profileVM.profile.address
         roleLabel.text = profileVM.profile.role
         aboutLabel.text = profileVM.profile.about
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! EditProfileViewController
-        vc.profile = profileVM.profile
     }
 
     @IBAction func imageClicked(_ sender: UIButton) {
