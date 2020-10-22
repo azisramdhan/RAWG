@@ -562,10 +562,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="99.776785714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Info-->
         <scene sceneID="X8F-jA-iim">
             <objects>
-                <viewController id="AdP-MS-8c9" sceneMemberID="viewController">
+                <viewController id="AdP-MS-8c9" customClass="ProfileViewController" customModule="RAWG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GWu-tN-FfO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -589,36 +589,33 @@
                                                 <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="1F6-dT-3pD">
-                                                <rect key="frame" x="48" y="40" width="72" height="72"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="1F6-dT-3pD">
+                                                <rect key="frame" x="48" y="16" width="72" height="72"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="1F6-dT-3pD" secondAttribute="height" id="gP5-ea-vkl"/>
                                                     <constraint firstAttribute="width" constant="72" id="pGY-QQ-0uL"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Azis R." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DH-mD-O21">
-                                                <rect key="frame" x="142" y="40" width="236" height="18.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DH-mD-O21">
+                                                <rect key="frame" x="142" y="16" width="236" height="18.5"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Majalengka, Indonesia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHe-XY-bW1">
-                                                <rect key="frame" x="142" y="58.5" width="120.5" height="14"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHe-XY-bW1">
+                                                <rect key="frame" x="142" y="34.5" width="71" height="14"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Om1-az-Hqg">
-                                                <rect key="frame" x="142" y="98" width="82.5" height="14"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Job Title / Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Om1-az-Hqg">
+                                                <rect key="frame" x="142" y="74" width="136.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCN-Qk-yk8">
-                                                <rect key="frame" x="36" y="126" width="342" height="179.5"/>
-                                                <string key="text">I am a Mobile Application Developer. I have learn and build mobile apps for few years start from Android platform using Java / Kotlin. I can convert mobile app design into responsive UI using XML and Constraint Layout. I am familiar with some library that I have used to when developing android app such as Butter Knife, Retrofit, Volley, Picasso, Glide, Room etc.
-
-Since last year I have working to build iOS app using Swift or help to fix issue on existing iOS app project written using Swift / Objective C. I build iOS app UI using storyboard and will be interested to learn and start using Swift UI if needed. I have used some library when developing iOS app such as DropDown, CarbonKit, KAPinField, NSActivityIndicatorView etc.</string>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can write a little about yourself here" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCN-Qk-yk8">
+                                                <rect key="frame" x="36" y="102" width="342" height="14"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -630,7 +627,7 @@ Since last year I have working to build iOS app using Swift or help to fix issue
                                             <constraint firstAttribute="trailing" secondItem="uCN-Qk-yk8" secondAttribute="trailing" constant="36" id="As1-xH-6Fc"/>
                                             <constraint firstItem="9DH-mD-O21" firstAttribute="top" secondItem="1F6-dT-3pD" secondAttribute="top" id="BAL-MW-fjB"/>
                                             <constraint firstItem="oHe-XY-bW1" firstAttribute="leading" secondItem="9DH-mD-O21" secondAttribute="leading" id="HSm-lJ-yiU"/>
-                                            <constraint firstItem="1F6-dT-3pD" firstAttribute="top" secondItem="gb1-13-DiB" secondAttribute="top" constant="40" id="Kqd-tD-VZi"/>
+                                            <constraint firstItem="1F6-dT-3pD" firstAttribute="top" secondItem="gb1-13-DiB" secondAttribute="top" constant="16" id="Kqd-tD-VZi"/>
                                             <constraint firstItem="uCN-Qk-yk8" firstAttribute="top" secondItem="1F6-dT-3pD" secondAttribute="bottom" constant="14" id="Mwv-ss-Jys"/>
                                             <constraint firstItem="uCN-Qk-yk8" firstAttribute="leading" secondItem="gb1-13-DiB" secondAttribute="leading" constant="36" id="PLr-mD-TiL"/>
                                             <constraint firstItem="Om1-az-Hqg" firstAttribute="leading" secondItem="Z1o-Lf-TxM" secondAttribute="leading" id="c27-nv-kH6"/>
@@ -665,18 +662,135 @@ Since last year I have working to build iOS app using Swift or help to fix issue
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LJd-mY-nWk"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cYE-Ge-NEg"/>
+                    <navigationItem key="navigationItem" title="Info" id="cYE-Ge-NEg">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ErF-ua-hX9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" image="Edit" id="b2M-Fr-bDX">
+                            <connections>
+                                <segue destination="lu5-4c-Qpo" kind="show" identifier="" id="dCy-kU-A83"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="aboutLabel" destination="uCN-Qk-yk8" id="tC8-qa-HIT"/>
+                        <outlet property="addressLabel" destination="oHe-XY-bW1" id="Mk9-UU-6aO"/>
+                        <outlet property="nameLabel" destination="9DH-mD-O21" id="EWm-Op-gS8"/>
+                        <outlet property="roleLabel" destination="Om1-az-Hqg" id="d7r-Qc-0VG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NE2-Kt-XtB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2834.7826086956525" y="-609.375"/>
         </scene>
+        <!--Edit-->
+        <scene sceneID="dSt-SJ-XpR">
+            <objects>
+                <viewController id="lu5-4c-Qpo" customClass="EditProfileViewController" customModule="RAWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qvU-gU-5uC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-Pe-MH5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Njp-aB-veu">
+                                        <rect key="frame" x="36" y="16" width="342" height="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your Job Title / Position" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pkj-UT-Drn">
+                                        <rect key="frame" x="36" y="79" width="342" height="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgJ-Dp-0TG">
+                                        <rect key="frame" x="36" y="66" width="23" height="13"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
+                                        <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zs4-qj-Fr8">
+                                        <rect key="frame" x="36" y="36" width="342" height="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="You can write a little about yourself here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dNU-SP-8Kf">
+                                        <rect key="frame" x="32" y="109" width="350" height="629"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubI-cg-9Xb">
+                                        <rect key="frame" x="36" y="66" width="23" height="13"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="13" id="4Zj-AE-2v9"/>
+                                            <constraint firstAttribute="width" constant="23" id="a8A-Rc-62I"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="roleTitleClicked:" destination="lu5-4c-Qpo" eventType="touchUpInside" id="DSf-Pq-kb9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Zs4-qj-Fr8" firstAttribute="top" secondItem="Njp-aB-veu" secondAttribute="bottom" id="2mC-Ky-o0K"/>
+                                    <constraint firstItem="Njp-aB-veu" firstAttribute="top" secondItem="vRB-Pe-MH5" secondAttribute="top" constant="16" id="56l-91-Mn6"/>
+                                    <constraint firstItem="Pkj-UT-Drn" firstAttribute="trailing" secondItem="Zs4-qj-Fr8" secondAttribute="trailing" id="5av-St-FRY"/>
+                                    <constraint firstItem="dNU-SP-8Kf" firstAttribute="trailing" secondItem="Pkj-UT-Drn" secondAttribute="trailing" constant="4" id="81N-dU-ONn"/>
+                                    <constraint firstAttribute="bottom" secondItem="dNU-SP-8Kf" secondAttribute="bottom" constant="36" id="Co6-IU-02B"/>
+                                    <constraint firstAttribute="trailing" secondItem="Njp-aB-veu" secondAttribute="trailing" constant="36" id="Fxn-p0-c4N"/>
+                                    <constraint firstItem="Zs4-qj-Fr8" firstAttribute="trailing" secondItem="Njp-aB-veu" secondAttribute="trailing" id="JFl-mW-rLq"/>
+                                    <constraint firstItem="ubI-cg-9Xb" firstAttribute="centerX" secondItem="BgJ-Dp-0TG" secondAttribute="centerX" id="Nov-BU-zeP"/>
+                                    <constraint firstItem="BgJ-Dp-0TG" firstAttribute="leading" secondItem="Pkj-UT-Drn" secondAttribute="leading" id="RUd-Km-Nv9"/>
+                                    <constraint firstItem="dNU-SP-8Kf" firstAttribute="leading" secondItem="Pkj-UT-Drn" secondAttribute="leading" constant="-4" id="Y0C-z8-Uwu"/>
+                                    <constraint firstItem="Zs4-qj-Fr8" firstAttribute="leading" secondItem="Njp-aB-veu" secondAttribute="leading" id="Z5j-Av-Q37"/>
+                                    <constraint firstItem="dNU-SP-8Kf" firstAttribute="top" secondItem="Pkj-UT-Drn" secondAttribute="bottom" constant="14" id="aMP-oU-LeU"/>
+                                    <constraint firstItem="Pkj-UT-Drn" firstAttribute="leading" secondItem="Zs4-qj-Fr8" secondAttribute="leading" id="dJf-NL-hhH"/>
+                                    <constraint firstItem="ubI-cg-9Xb" firstAttribute="centerY" secondItem="BgJ-Dp-0TG" secondAttribute="centerY" id="pPd-XG-hJq"/>
+                                    <constraint firstItem="Pkj-UT-Drn" firstAttribute="top" secondItem="BgJ-Dp-0TG" secondAttribute="bottom" id="qAQ-i8-K3L"/>
+                                    <constraint firstItem="Njp-aB-veu" firstAttribute="leading" secondItem="vRB-Pe-MH5" secondAttribute="leading" constant="36" id="x1C-Ly-8Co"/>
+                                    <constraint firstItem="BgJ-Dp-0TG" firstAttribute="top" secondItem="Zs4-qj-Fr8" secondAttribute="bottom" constant="14" id="xx0-Fo-lYN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.082340128720000003" green="0.082361884420000003" blue="0.082337267699999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vRB-Pe-MH5" firstAttribute="leading" secondItem="ajI-A1-Wg9" secondAttribute="leading" id="ViQ-lO-qPO"/>
+                            <constraint firstItem="vRB-Pe-MH5" firstAttribute="top" secondItem="ajI-A1-Wg9" secondAttribute="top" id="Xbo-it-X5C"/>
+                            <constraint firstItem="ajI-A1-Wg9" firstAttribute="bottom" secondItem="vRB-Pe-MH5" secondAttribute="bottom" id="bhl-A7-xBo"/>
+                            <constraint firstItem="vRB-Pe-MH5" firstAttribute="trailing" secondItem="ajI-A1-Wg9" secondAttribute="trailing" id="trN-q7-Qml"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ajI-A1-Wg9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit" id="2oC-bY-ZWx">
+                        <barButtonItem key="rightBarButtonItem" title="Done" image="Done" id="WyI-Wx-fmV">
+                            <connections>
+                                <action selector="doneClicked:" destination="lu5-4c-Qpo" id="LM9-So-nyL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="aboutTextField" destination="dNU-SP-8Kf" id="ZEz-Mm-55k"/>
+                        <outlet property="addressTextField" destination="Zs4-qj-Fr8" id="89r-pC-nru"/>
+                        <outlet property="nameTextField" destination="Njp-aB-veu" id="AuF-iL-10f"/>
+                        <outlet property="roleTextField" destination="Pkj-UT-Drn" id="l6Y-yM-Qg6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9NH-RK-Wer" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3627.5362318840585" y="-609.375"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Close" width="48" height="48"/>
+        <image name="Done" width="24" height="24"/>
+        <image name="Edit" width="24" height="24"/>
         <image name="Info" width="24" height="24"/>
+        <image name="Placeholder" width="36" height="36"/>
         <image name="Play" width="48" height="48"/>
-        <image name="Profile" width="256" height="256"/>
         <image name="Search" width="24" height="24"/>
     </resources>
 </document>
