@@ -50,5 +50,17 @@ class GameTableViewCell: UITableViewCell {
         ratingView.settings.fillMode = .precise
         ratingView.rating = Double(data.rating ?? 0)
     }
+    
+    func setupWith(data: FavoriteModel){
+        if let thumbnail = data.backgroundImage {
+            thumbnailView.sd_setImage(with: URL(string: thumbnail), completed: nil)
+        }
+        titleLabel.text = data.name
+        releaseDateLabel.text = data.released?.toString(format: "MMM d, yyyy")
+        ratingLabel.text = "\(data.rating ?? 0) | \(Helper.formatNumber(Int(data.ratingsCount ?? 0))) Ratings"
+        genresLabel.text = data.genres
+        ratingView.settings.fillMode = .precise
+        ratingView.rating = Double(data.rating ?? 0)
+    }
 
 }

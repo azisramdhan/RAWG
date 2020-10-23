@@ -10,6 +10,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    lazy var favoriteProvider: FavoriteProvider = { return FavoriteProvider() }()
     var progress = UIActivityIndicatorView(style: .whiteLarge)
     
     override func viewDidLoad() {

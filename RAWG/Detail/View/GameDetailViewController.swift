@@ -21,14 +21,17 @@ class GameDetailViewController: BaseViewController {
     @IBOutlet weak private var descriptionLabel: UILabel!
     @IBOutlet weak private var ratingView: CosmosView!
     @IBOutlet weak private var previewClipView: UIImageView!
+    @IBOutlet weak private var favoriteSwitch: UISwitch!
     
     private let viewModel = GameDetailViewModel()
     var id: Int = -1
+    var genres = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupVM()
+        setupProvider()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -56,6 +59,14 @@ class GameDetailViewController: BaseViewController {
         viewModel.fetchData(id: id)
     }
     
+    private func setupProvider(){
+        favoriteProvider.get(id, completion: { game in
+            DispatchQueue.main.async {
+                self.favoriteSwitch.setOn(true, animated: false)
+            }
+        })
+    }
+    
     private func updateUI(){
         if let data = viewModel.game {
             if let preview = data.clip?.preview {
@@ -67,7 +78,6 @@ class GameDetailViewController: BaseViewController {
             titleLabel.text = data.name
             releaseDateLabel.text = data.released?.toString(format: "MMM d, yyyy")
             ratingLabel.text = "\(data.rating ?? 0) | \(Helper.formatNumber(data.ratingsCount ?? 0)) Ratings"
-            var genres = ""
             for (index, genre) in data.genres.enumerated() {
                 if index == 0 {
                     genres += genre.name ?? ""
@@ -90,7 +100,24 @@ class GameDetailViewController: BaseViewController {
             ratingView.rating = Double(data.rating ?? 0)
         }
     }
-
+    @IBAction func switchChanged(_ sender: UISwitch) {
+        if let game = viewModel.game {
+            if sender.isOn {
+                favoriteProvider.create(Int32(id), genres, game.name ?? "", game.rating ?? 0, Int32(game.ratingsCount ?? 0), game.backgroundImage ?? "", game.released ?? Date()) {
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "Successful", message: "Added to favorites")
+                    }
+                }
+            } else {
+                favoriteProvider.delete(id, completion: {
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "Successful", message: "Deleted from favorites")
+                    }
+                })
+            }
+        }
+    }
+    
     @IBAction func previewClicked(_ sender: UIButton) {
         if let data = viewModel.game {
             if let clip = data.clip?.clip {
@@ -106,4 +133,9 @@ class GameDetailViewController: BaseViewController {
             }
         }
     }
+    
+    @IBAction func closeClicked(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
